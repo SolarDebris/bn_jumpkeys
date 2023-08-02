@@ -32,11 +32,11 @@ void Commands::jump_up_block(BinaryViewRef bv){
 
 void Commands::register_commands(){
 
-    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the end of current block", Commands::jump_end_of_block);
-    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the start of current block", Commands::jump_start_of_block);
-    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block down and left of current block", Commands::jump_next_left_block);
-    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block down and right of the current block", Commands::jump_next_right_block);
-    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block left of the current block", Commands::jump_left_block);
-    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block right of the current block", Commands::jump_right_block);
+    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the end of current block", "", Commands::jump_end_of_block);
+    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the start of current block", "", Commands::jump_start_of_block);
+    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block down and left of current block", "" Commands::jump_next_left_block);
+    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block down and right of the current block", "",  Commands::jump_next_right_block);
+    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block left of the current block", "", Commands::jump_left_block);
+    BinaryNinja::PluginCommand::register_for_address("Binja Jumpkeys\\Jump to the block right of the current block", "", Commands::jump_right_block);
 
 }

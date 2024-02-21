@@ -15,8 +15,7 @@ endif()
 # Add vendored API dependency if enabled
 option(BN_VENDOR_API "Use the Binary Ninja API submodule" ON)
 if(BN_VENDOR_API)
-	add_subdirectory(vendor/api)
-
+    add_subdirectory(vendor/api)
 	# Auto-configure an `install` target
     bn_install_plugin(bn_jumpkeys)
 endif()

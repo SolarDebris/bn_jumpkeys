@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 project(bn_jumpkeys)
 
 # Create plugin library target
-add_library(bn_jumpkeys SHARED src/plugin.cpp)
+add_library(bn_jumpkeys SHARED src/plugin.cpp src/commands.h src/commands.cpp)
 target_compile_features(bn_jumpkeys PRIVATE cxx_std_17 c_std_99)
 target_link_libraries(bn_jumpkeys PRIVATE binaryninjaapi)
 
@@ -11,6 +11,8 @@ target_link_libraries(bn_jumpkeys PRIVATE binaryninjaapi)
 if(${CMAKE_SYSTEM_NAME} STREQUAL "LINUX")
 	target_compile_options(bn_jumpkeys PRIVATE "-fPIC")
 endif()
+
+
 
 # Add vendored API dependency if enabled
 option(BN_VENDOR_API "Use the Binary Ninja API submodule" ON)

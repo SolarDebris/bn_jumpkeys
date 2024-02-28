@@ -1,10 +1,11 @@
 #include "commands.h"
 
-// Jump to the end of current basic block
+
 void Commands::jump_end_of_block(BinrayViewRef bv){
     uint64_t addr = bv::GetCurrentOffset();
+    string view_name = bv::GetCurrentView();
     Ref< BasicBlock > basic_block =  bv::GetRecentBasicBlockForAddress(addr);
-    bv::Navigate();
+    bv::Navigate(view_name, addr);
 }
 
 void Commands::jump_start_of_block(BinaryViewRef bv){
@@ -16,6 +17,7 @@ void Commands::jump_start_of_block(BinaryViewRef bv){
 
 void Commands::jump_next_left_block(BinaryViewRef bv){
     uint64_t addr = bv::GetCurrentOffset();
+    string view_name = bv::GetCurrentView();
     Ref< BasicBlock > basic_block =  bv::GetRecentBasicBlockForAddress(addr);
     bv::Navigate();
 
@@ -23,6 +25,7 @@ void Commands::jump_next_left_block(BinaryViewRef bv){
 
 void Commands::jump_next_right_block(BinaryViewRef bv){
     uint64_t addr = bv::GetCurrentOffset();
+    string view_name = bv::GetCurrentView();
     Ref< BasicBlock > basic_block =  bv::GetRecentBasicBlockForAddress(addr);
     bv::Navigate();
 
@@ -30,6 +33,7 @@ void Commands::jump_next_right_block(BinaryViewRef bv){
 
 void Commands::jump_left_block(BinaryViewRef bv){
     uint64_t addr = bv::GetCurrentOffset();
+    string view_name = bv::GetCurrentView();
     Ref< BasicBlock > basic_block =  bv::GetRecentBasicBlockForAddress(addr);
     bv::Navigate();
 
@@ -37,6 +41,7 @@ void Commands::jump_left_block(BinaryViewRef bv){
 
 void Commands::jump_right_block(BinaryViewRef bv){
     uint64_t addr = bv::GetCurrentOffset();
+    string view_name = bv::GetCurrentView();
     Ref< BasicBlock > basic_block =  bv::GetRecentBasicBlockForAddress(addr);
     bv::Navigate();
 
@@ -44,6 +49,7 @@ void Commands::jump_right_block(BinaryViewRef bv){
 
 void Commands::jump_up_block(BinaryViewRef bv){
     uint64_t addr = bv::GetCurrentOffset();
+    string view_name = bv::GetCurrentView();
     Ref< BasicBlock > basic_block =  bv::GetRecentBasicBlockForAddress(addr);
     bv::Navigate();
 

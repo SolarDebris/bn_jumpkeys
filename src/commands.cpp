@@ -15,6 +15,7 @@ void Commands::jump_end_of_block(Ref<BN::BinaryView> bv){
 
     if (basic_block_ref){
         BasicBlock &basic_block = *basic_block_ref;
+        addr = basic_block->GetEnd();
         bv->Navigate(view_name, addr);
     }
 
@@ -27,6 +28,7 @@ void Commands::jump_start_of_block(Ref<BN::BinaryView> bv){
 
     if (basic_block_ref){
         BasicBlock &basic_block = *basic_block_ref;
+        addr = basic_block->GetStart();
         bv->Navigate(view_name, addr);
     }
 
